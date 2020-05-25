@@ -37,9 +37,16 @@ public class MapSort {
             }
             throw new IllegalArgumentException("No two sum solution");
         }
+
+
     public static void main(String[] args) {
         MapSort sort = new MapSort();
-        int[] nums = {3,6,11, 15};
+        int[] nums = {3,6,11,15};
         System.out.println(Arrays.toString(sort.twoSum(nums,9)));
+        Integer a = new Integer(100);
+        Integer c = 100;
+        int b = 100;
+        System.out.println(a==b);
+        System.out.println(a==c);
     }
 }

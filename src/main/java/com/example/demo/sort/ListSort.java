@@ -1,5 +1,8 @@
 package com.example.demo.sort;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 链表
  */
@@ -26,19 +29,42 @@ public class ListSort {
      * @return
      */
     public static Node reverseList(Node node) {
-        Node pre = null;
+        Node newNode = null;
         Node next ;
         while (node != null) {
             next = node.next;
-            node.next = pre;
-            pre = node;
+            node.next = newNode;
+            newNode = node;
             node = next;
         }
-        return pre;
+        return newNode;
+    }
+
+    public Node addTwoNumbers(Node l1, Node l2) {
+        Node  listNode= new Node();
+        Node p ;
+        p = listNode;
+        int sum = 0;
+
+        while (l1 != null || l2 != null || sum != 0) {
+            if (l1 != null) {
+                sum += l1.value;
+                l1 = l1.next;
+            }
+            if (l2 != null) {
+                sum += l2.value;
+                l2 = l2.next;
+            }
+            p.next =new Node();
+            sum = sum / 10;
+            p = p.next;
+        }
+        return listNode.next;
     }
 
     public static void main(String[] args) {
-        DataSort dataSort = new DataSort();
+        List list = new ArrayList();
+        ListSort dataSort = new ListSort();
         int[] a = {45,56,23,43,1,5,8};
         //  System.out.print(Arrays.toString(dataSort.showSort(a)));
         Node head1 = new Node();
@@ -52,6 +78,7 @@ public class ListSort {
         head1.setNext(head2);
         head2.setNext(head3);
         head3.setNext(head4);
-        System.out.println(head1);
+        Node node = dataSort.reverseList(head1);
+        System.out.println(node);
     }
 }

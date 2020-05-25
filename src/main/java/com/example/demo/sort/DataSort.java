@@ -78,8 +78,15 @@ public class DataSort {
 
     public static void main(String[] args) {
         DataSort dataSort = new DataSort();
-        int[] a = {45,56,23,43,1,5,8};
-        System.out.print(Arrays.toString(dataSort.showSort(a)));
+        int[] ab = {45,56,23,43,1,5,8};
+        System.out.println(Arrays.toString(dataSort.showSort(ab)));
+        String a ="123";
+        String b = new String("123");
+        String c = "12"+"3";
+        System.out.println(a==b);
+        System.out.println(a.equals(b));
+        System.out.println(c==b);
+        System.out.println(c.equals(b));
     }
 
 }
